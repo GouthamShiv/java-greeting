@@ -12,6 +12,7 @@
 	<artifactId>greeting</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>greeting</name>
+	<packaging>war</packaging>
 	<description>Greetings from Goutham</description>
 	<properties>
 		<java.version>11</java.version>
