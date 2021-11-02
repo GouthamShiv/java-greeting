@@ -13,7 +13,7 @@
 	<artifactId>greeting</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>greeting</name>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<description>Greetings from Goutham</description>
 	<properties>
 		<java.version>8</java.version>
@@ -21,20 +21,20 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId><!-- 
 			<exclusions>
 				<exclusion>
 					<artifactId>spring-boot-starter-tomcat</artifactId>
 					<groupId>org.springframework.boot</groupId>
 				</exclusion>
-			</exclusions>
+			</exclusions> -->
 		</dependency>
 
-		<dependency>
+<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
-		</dependency>
+		</dependency> -->
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
