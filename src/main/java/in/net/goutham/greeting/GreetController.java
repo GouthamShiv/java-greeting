@@ -4,6 +4,8 @@
  */
 package in.net.goutham.greeting;
 
+import java.util.Date;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,5 +18,10 @@ public class GreetController {
 	@GetMapping("/")
 	public String greet() {
 		return "Hello World!";
+	}
+	
+	@GetMapping("/now")
+	public String greetNow() {
+		return "Hello World! " + new Date().toString();
 	}
 }

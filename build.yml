@@ -4,6 +4,18 @@
   become: false
 
   tasks:
+  - name: Stop pre-existing container for the app
+    command: docker stop greeting
+    ignore_errors: yes
+    
+  - name: Remove pre-existing container for the app
+    command: docker rm greeting
+    ignore_errors: yes
+    
+  - name: Remove pre-existing image for the app
+    command: docker rmi gouthamshiv/greeting:latest
+    ignore_errors: yes
+    
   - name: Build docker image using artifact
     command: docker build -t gouthamshiv/greeting:latest .
     args:
