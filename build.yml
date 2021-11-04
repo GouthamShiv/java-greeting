@@ -1,0 +1,9 @@
+---
+- hosts: docker_host
+  become: true
+
+  tasks:
+  - name: Build docker image using artifact
+    command: docker build -t gouthamshiv/greeting:latest .
+    args:
+      chdir: /opt/workspace
