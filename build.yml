@@ -1,9 +1,13 @@
 ---
-- hosts: docker_host
-  become: true
+- hosts: local
+  connection: local
+  become: false
 
   tasks:
   - name: Build docker image using artifact
     command: docker build -t gouthamshiv/greeting:latest .
     args:
-      chdir: /opt/workspace
+    chdir: /opt/workspace
+
+  - name: Create container using above image
+    command: docker run -d --name greeting -p 8888:8080 gouthamshiv/greeting:latest
