@@ -21,5 +21,23 @@
     args:
       chdir: /opt/workspace
 
-  - name: Create container using above image
+- hosts: docker_host
+  connection: docker_host
+  become: false
+  
+  tasks:
+  - name: Stop pre-existing container for the app
+    command: docker stop greeting
+    ignore_errors: yes
+    
+  - name: Remove pre-existing container for the app
+    command: docker rm greeting
+    ignore_errors: yes
+    
+  - name: Remove pre-existing image for the app
+    command: docker rmi gouthamshiv/greeting:latest
+    ignore_errors: yes
+
+  - name: Pull latest image and start container
     command: docker run -d --name greeting -p 8888:8080 gouthamshiv/greeting:latest
+    ignore_errors: yes
