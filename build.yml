@@ -22,7 +22,6 @@
       chdir: /opt/workspace
 
 - hosts: docker_host
-  connection: docker_host
   become: false
   
   tasks:
